@@ -1,0 +1,33 @@
+.App-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+  color: white;
+  background-color: #141127;
+  justify-content: space-between;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.rightFloat {
+  float: right;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.welcomeText {
+  font-weight: 200;
+}
+
+.welcomeSpan {
+  vertical-align: sub;
+}
+
+.logo {
+  max-height: 30px;
+  max-width: 30px;
+  vertical-align: middle;
+}
