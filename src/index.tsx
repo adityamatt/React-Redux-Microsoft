@@ -6,16 +6,25 @@ import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import configureStore from './store/store'
 import { BrowserRouter } from 'react-router-dom'
-
+import { PublicClientApplication } from '@azure/msal-browser'
+import { msalConfig } from './authConfig'
+import { MsalProvider } from '@azure/msal-react'
 declare let module: any
 const { store } = configureStore()
 
+const msalInstance = new PublicClientApplication(msalConfig)
+
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
+  <React.StrictMode>
+    <MsalProvider instance={msalInstance}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </MsalProvider>
+  </React.StrictMode>,
+
   document.getElementById('root')
 )
 if (module.hot) {

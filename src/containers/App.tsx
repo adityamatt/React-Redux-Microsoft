@@ -14,13 +14,7 @@ export const App = (props: any) => {
       <ThemeProvider>
         <div className="App">
           <div className="header">
-            <Header
-              userName="Mock Name"
-              loggedIn={true}
-              signOut={() => {
-                //do nothing
-              }}
-            />
+            <Header />
           </div>
           <div className="body">
             <div className="content">
