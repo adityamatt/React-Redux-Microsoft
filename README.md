@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### `Setup`
+
+Create a .env file in the root of directory like example.env with the values as required
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -44,3 +48,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+![How it would look at start](./public/mock.png?raw=true 'Microsoft Tool')
