@@ -2,13 +2,15 @@ import * as React from 'react'
 import './App.css'
 import { NavBar } from '../components/Nav/NavBar'
 import { Route, HashRouter, Redirect } from 'react-router-dom'
-import { ThemeProvider } from '@fluentui/react'
+import { initializeIcons, ThemeProvider } from '@fluentui/react'
 import Header from '../components/Nav/Header'
 import Home from '../components/Home/Home'
 import About from '../components/About/About'
 import Footer from '../components/Footer/Footer'
 
 export const App = (props: any) => {
+  initializeIcons()
+
   return (
     <HashRouter>
       <ThemeProvider>
