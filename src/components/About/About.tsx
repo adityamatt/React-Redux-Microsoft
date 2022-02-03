@@ -74,6 +74,9 @@ export const About = (props: IHome) => {
       <p>
         To get started, edit <code>src/components/About/About.tsx</code> and save to reload.
         <AsyncTypeahead
+          onInputChange={(text: string) => {
+            if (!text) setOptions([])
+          }}
           multiple={true}
           onChange={onChange}
           filterBy={filterBy}
