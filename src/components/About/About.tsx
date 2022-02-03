@@ -77,6 +77,7 @@ export const About = (props: IHome) => {
           onInputChange={(text: string) => {
             if (!text) setOptions([])
           }}
+          selected={selectedOptions}
           multiple={true}
           onChange={onChange}
           filterBy={filterBy}
