@@ -42,6 +42,28 @@ export const About = (props: IHome) => {
       })
   }
 
+  const handleSeachNew = React.useCallback(() => {
+    return (query: string) => {
+      if (!query) {
+        setOptions([])
+        return
+      }
+      setIsLoading(true)
+
+      fetch(`${SEARCH_URI}?q=${query}+in:login&page=1&per_page=50`)
+        .then((resp) => resp.json())
+        .then(({ items }) => {
+          const options = items.map((i: IOptions) => ({
+            avatar_url: i.avatar_url,
+            id: i.id,
+            login: i.login,
+          }))
+
+          setOptions(options)
+          setIsLoading(false)
+        })
+    }
+  }, [isLoading, options])
   const filterBy = () => true
 
   const getProperty = (option: Option, property: string) => {
@@ -75,8 +97,13 @@ export const About = (props: IHome) => {
         To get started, edit <code>src/components/About/About.tsx</code> and save to reload.
         <AsyncTypeahead
           onInputChange={(text: string) => {
-            if (!text) setOptions([])
+            if (!text) {
+              setOptions([])
+              return
+            }
+            console.log('This was executed')
           }}
+          delay={5000}
           selected={selectedOptions}
           multiple={true}
           onChange={onChange}
@@ -85,7 +112,7 @@ export const About = (props: IHome) => {
           isLoading={isLoading}
           labelKey="login"
           minLength={3}
-          onSearch={handleSearch}
+          onSearch={handleSeachNew()}
           options={options}
           placeholder="Search for a Github user..."
           renderMenuItemChildren={(option, props) => (

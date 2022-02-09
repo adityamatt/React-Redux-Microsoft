@@ -12,7 +12,7 @@ import { MsalProvider } from '@azure/msal-react'
 import './styles/styles.scss'
 import './styles/example.css'
 import './styles/prism.css'
-// import './styles/bootstrap.min.css'
+import './styles/bootstrap.min.css'
 
 declare let module: any
 const { store } = configureStore()
