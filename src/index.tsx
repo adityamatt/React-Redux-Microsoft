@@ -12,7 +12,7 @@ import { MsalProvider } from '@azure/msal-react'
 import './styles/styles.scss'
 import './styles/example.css'
 import './styles/prism.css'
-import './styles/bootstrap.min.css'
+// import './styles/bootstrap.min.css'
 
 declare let module: any
 const { store } = configureStore()
@@ -24,12 +24,6 @@ ReactDOM.render(
     <MsalProvider instance={msalInstance}>
       <Provider store={store}>
         <BrowserRouter>
-          <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-            crossOrigin="anonymous"
-          ></link>
           <App />
         </BrowserRouter>
       </Provider>
