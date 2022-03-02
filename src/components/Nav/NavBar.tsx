@@ -21,8 +21,8 @@ const navStyles: Partial<INavStyles> = {
 }
 export function NavBar(props: INavBar) {
   const LINKS = [
-    { name: 'Home', url: '#/', key: 'homeKey', iconProps: { iconName: 'Home' } },
-    { name: 'About', url: '#/about', key: 'aboutKey', iconProps: { iconName: 'Add' } },
+    // { name: 'Home', url: '#/', key: 'homeKey', iconProps: { iconName: 'Home' } },
+    { name: 'Home', url: '#/about', key: 'aboutKey', iconProps: { iconName: 'Add' } },
     // { name: 'Contact', url: '#/contact', key: 'contactKey', iconProps: { iconName: 'Contact' } },
   ]
 

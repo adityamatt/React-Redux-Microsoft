@@ -9,9 +9,13 @@ import { BrowserRouter } from 'react-router-dom'
 import { PublicClientApplication } from '@azure/msal-browser'
 import { msalConfig } from './authConfig'
 import { MsalProvider } from '@azure/msal-react'
+import { JupiterProvider } from '@jup-ag/react-hook'
+import { Connection } from '@solana/web3.js'
+
 declare let module: any
 const { store } = configureStore()
 
+const connection = new Connection('https://solana-api.projectserum.com')
 const msalInstance = new PublicClientApplication(msalConfig)
 
 ReactDOM.render(
@@ -19,7 +23,9 @@ ReactDOM.render(
     <MsalProvider instance={msalInstance}>
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <JupiterProvider connection={connection} cluster={'mainnet-beta'}>
+            <App />
+          </JupiterProvider>
         </BrowserRouter>
       </Provider>
     </MsalProvider>

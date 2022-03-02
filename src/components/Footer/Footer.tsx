@@ -6,7 +6,7 @@ interface IHome {}
 export const Footer = (props: IHome) => {
   return (
     <Fragment>
-      <p>&copy; Author adtiwar@microsoft.com | aditya.tiwarics@gmail.com </p>
+      <p>&copy; highfive.in@gmail.com </p>
     </Fragment>
   )
 }

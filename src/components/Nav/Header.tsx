@@ -26,10 +26,7 @@ export const Header = (props: IHeader) => {
   return (
     <div className="App-header">
       <div className="ms-font-xl">
-        <a href="/">
-          <img src={logo} className="logo" alt="My Application" />
-        </a>{' '}
-        My Application
+        <a href="/">{/* <img src={logo} className="logo" alt="My Application" /> */}</a> My Application
       </div>
       <div className="rightFloat">
         <h4 className="welcomeText">
@@ -52,13 +49,13 @@ export const Header = (props: IHeader) => {
           )}
           {!isAuthenticated && inProgress === 'none' && (
             <div>
-              <DefaultButton
+              {/* <DefaultButton
                 onClick={() => {
                   handleLogin(instance)
                 }}
               >
                 Sign In
-              </DefaultButton>
+              </DefaultButton> */}
             </div>
           )}
         </h4>
